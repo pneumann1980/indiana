@@ -1,0 +1,123 @@
+/* ============================================
+   Indiana – LucasArts Adventure
+   Global Styles
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0604;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+    user-select: none;
+}
+
+#game-wrapper {
+    position: relative;
+    width: 800px;
+    height: 520px;
+}
+
+#game-container {
+    position: relative;
+    width: 800px;
+    height: 520px;
+    box-shadow: 0 0 60px rgba(180, 100, 20, 0.4), 0 0 120px rgba(100, 50, 10, 0.3);
+    border: 2px solid #5a3a18;
+}
+
+#gameCanvas {
+    display: block;
+    cursor: crosshair;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* ============================================
+   Loading Screen
+   ============================================ */
+
+#loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, #1a0e04 0%, #0a0602 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border: 2px solid #5a3a18;
+}
+
+.loading-content {
+    text-align: center;
+    padding: 40px;
+}
+
+.loading-content h1 {
+    font-size: 64px;
+    color: #ffd700;
+    letter-spacing: 12px;
+    text-shadow: 0 0 20px rgba(255, 200, 0, 0.8), 0 0 40px rgba(255, 150, 0, 0.5);
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+}
+
+.loading-content h2 {
+    font-size: 18px;
+    color: #c8a060;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    font-family: 'Courier New', monospace;
+    font-weight: normal;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #806040;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+#start-btn {
+    background: linear-gradient(to bottom, #5a3010, #3a1a06);
+    border: 2px solid #ffd700;
+    color: #ffd700;
+    padding: 16px 48px;
+    font-size: 18px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-shadow: 0 0 10px rgba(255, 200, 0, 0.5);
+    box-shadow: 0 0 20px rgba(255, 200, 0, 0.2);
+}
+
+#start-btn:hover {
+    background: linear-gradient(to bottom, #8a4820, #5a2a10);
+    box-shadow: 0 0 30px rgba(255, 200, 0, 0.5), 0 0 10px rgba(255, 200, 0, 0.3);
+    transform: scale(1.03);
+}
+
+#start-btn:active {
+    transform: scale(0.98);
+}
+
+.credits {
+    margin-top: 30px;
+    font-size: 11px;
+    color: #4a3020;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indiana – Jäger des verlorenen Schatzes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-wrapper">
+        <div id="game-container">
+            <canvas id="gameCanvas" width="800" height="520"></canvas>
+        </div>
+        <div id="loading-screen">
+            <div class="loading-content">
+                <h1>INDIANA</h1>
+                <h2>Jäger des verlorenen Schatzes</h2>
+                <p class="subtitle">Ein Point-and-Click-Adventure</p>
+                <button id="start-btn">SPIEL STARTEN</button>
+                <p class="credits">Inspiriert von LucasArts Klassikern • 1936 n. Chr.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Engine -->
+    <script src="js/config.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/character.js"></script>
+    <script src="js/inventory.js"></script>
+    <script src="js/dialog.js"></script>
+    <script src="js/cutscene.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/sceneManager.js"></script>
+
+    <!-- Scenes -->
+    <script src="js/scenes/temple.js"></script>
+    <script src="js/scenes/university.js"></script>
+    <script src="js/scenes/nepal.js"></script>
+    <script src="js/scenes/cairo.js"></script>
+    <script src="js/scenes/wellofsouls.js"></script>
+    <script src="js/scenes/ship.js"></script>
+    <script src="js/scenes/island.js"></script>
+
+    <!-- Entry Point -->
+    <script src="js/main.js"></script>
+</body>
+</html>
