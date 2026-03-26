@@ -15,7 +15,7 @@ SceneManager.register('island', {
             id: 'ark_altar',
             name: 'Bundeslade auf dem Altar',
             x: 310, y: 150, w: 180, h: 130,
-            walkX: 400, walkY: 320,
+            walkX: 400, walkY: 315,
             condition: function() { return SceneManager.current.phase === 'opening'; },
             verbs: {
                 'look': function() {
@@ -31,7 +31,7 @@ SceneManager.register('island', {
             id: 'pole',
             name: 'Pfahl',
             x: 100, y: 200, w: 30, h: 160,
-            walkX: 150, walkY: 330,
+            walkX: 150, walkY: 315,
             condition: function() { return SceneManager.current.phase === 'bound'; },
             verbs: {
                 'look': function() {
@@ -57,7 +57,7 @@ SceneManager.register('island', {
             id: 'belloq_ceremony',
             name: 'Belloq',
             x: 500, y: 180, w: 80, h: 160,
-            walkX: 480, walkY: 320,
+            walkX: 480, walkY: 315,
             condition: function() { return SceneManager.current.phase === 'bound'; },
             verbs: {
                 'look': function() {
@@ -81,7 +81,7 @@ SceneManager.register('island', {
             id: 'aftermath',
             name: 'Trümmer der Zeremonie',
             x: 100, y: 150, w: 600, h: 200,
-            walkX: 400, walkY: 320,
+            walkX: 400, walkY: 315,
             condition: function() { return SceneManager.current.phase === 'aftermath'; },
             verbs: {
                 'look': function() {
@@ -97,7 +97,7 @@ SceneManager.register('island', {
             id: 'exit_final',
             name: 'Zum Meer',
             x: 680, y: 200, w: 120, h: 180,
-            walkX: 720, walkY: 330,
+            walkX: 720, walkY: 315,
             condition: function() { return SceneManager.current.phase === 'aftermath'; },
             verbs: {
                 'look': function() {
@@ -327,7 +327,7 @@ SceneManager.register('island', {
         Utils.text(ctx, 'Marion', 693, 352, { size: 9, color: '#ffb0c0', align: 'center', shadow: true });
 
         // Belloq at altar (center)
-        Character.drawNPC(ctx, 545, 330, {
+        Character.drawNPC(ctx, 545, 315, {
             scale: 1.0,
             skin: '#c4a870',
             jacket: '#f0e8d0',
@@ -358,7 +358,7 @@ SceneManager.register('island', {
         this.drawArkOpening(ctx, 310, 148, time);
 
         // Belloq + soldiers
-        Character.drawNPC(ctx, 545, 330, {
+        Character.drawNPC(ctx, 545, 315, {
             scale: 1.0,
             skin: '#c4a870',
             jacket: '#f0e8d0',
@@ -387,7 +387,7 @@ SceneManager.register('island', {
         ctx.fillRect(180, 140, 440, 200);
 
         // Marion free, standing
-        Character.drawNPC(ctx, 350, 330, {
+        Character.drawNPC(ctx, 350, 315, {
             scale: 0.9,
             skin: '#c8a078',
             jacket: '#3a2830',

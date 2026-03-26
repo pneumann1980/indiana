@@ -73,8 +73,14 @@ var Input = {
             return;
         }
 
-        // Cutscene: block interaction
-        if (Cutscene.isActive()) return;
+        // Cutscene caption: allow click-to-skip
+        if (Cutscene.isActive()) {
+            var cs = GameState.cutscene;
+            if (cs.steps[cs.currentStep] && cs.steps[cs.currentStep].type === 'caption') {
+                cs.captionTimer = 0; // skip immediately
+            }
+            return;
+        }
 
         // Travel map: block
         if (TravelMap.active) return;

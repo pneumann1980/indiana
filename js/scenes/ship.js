@@ -10,7 +10,7 @@ SceneManager.register('ship', {
             id: 'sailor',
             name: 'Griechischer Seemann',
             x: 500, y: 200, w: 80, h: 160,
-            walkX: 480, walkY: 330,
+            walkX: 480, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Ein griechischer Seemann. Auf diesem Schiff ist er unser Verbündeter.");
@@ -28,7 +28,7 @@ SceneManager.register('ship', {
             id: 'marion_cabin',
             name: 'Marions Kabine',
             x: 80, y: 210, w: 160, h: 150,
-            walkX: 160, walkY: 330,
+            walkX: 160, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Marions Kabine. Sie ist endlich in Sicherheit... vorerst.");
@@ -61,7 +61,7 @@ SceneManager.register('ship', {
             id: 'continue_island',
             name: 'Zur Insel',
             x: 680, y: 200, w: 120, h: 180,
-            walkX: 720, walkY: 330,
+            walkX: 720, walkY: 315,
             condition: function() { return GameState.flag('ship_boarded'); },
             verbs: {
                 'look': function() {
@@ -76,7 +76,7 @@ SceneManager.register('ship', {
             id: 'begin_island',
             name: 'Zur Insel aufbrechen',
             x: 680, y: 200, w: 120, h: 180,
-            walkX: 720, walkY: 330,
+            walkX: 720, walkY: 315,
             condition: function() { return !GameState.flag('ship_boarded'); },
             verbs: {
                 'look': function() {
@@ -272,7 +272,7 @@ SceneManager.register('ship', {
 
     drawMarion: function(ctx) {
         if (GameState.flag('ship_boarded')) return;
-        Character.drawNPC(ctx, 160, 330, {
+        Character.drawNPC(ctx, 160, 315, {
             scale: 0.9,
             skin:   '#c8a078',
             jacket: '#3a2830',

@@ -132,7 +132,7 @@ SceneManager.register('wellofsouls', {
             id: 'exit_wos',
             name: 'Ausgang',
             x: 700, y: 200, w: 100, h: 180,
-            walkX: 710, walkY: 330,
+            walkX: 710, walkY: 315,
             condition: function() { return GameState.flag('wos_capturedByNazis'); },
             verbs: {
                 'look': function() {

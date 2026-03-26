@@ -39,8 +39,8 @@ var Dialog = {
         var speaker = line.speaker || '';
         var text    = line.text    || '';
 
-        var boxX = 20, boxY = 20;
-        var boxW = 760, boxH = 110;
+        var boxX = 14, boxY = 12;
+        var boxW = 772, boxH = 116;
 
         // Shadow
         ctx.fillStyle = 'rgba(0,0,0,0.7)';

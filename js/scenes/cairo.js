@@ -10,7 +10,7 @@ SceneManager.register('cairo', {
             id: 'sallah',
             name: 'Sallah',
             x: 560, y: 190, w: 75, h: 160,
-            walkX: 540, walkY: 330,
+            walkX: 540, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Sallah – der beste Schaufelmann in Ägypten und Indys bester Freund.");
@@ -24,7 +24,7 @@ SceneManager.register('cairo', {
             id: 'merchant_carpet',
             name: 'Teppichhändler',
             x: 60, y: 210, w: 120, h: 150,
-            walkX: 120, walkY: 330,
+            walkX: 120, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Ein ägyptischer Teppichhändler. Er hat auch... andere Dinge zu verkaufen.");
@@ -42,7 +42,7 @@ SceneManager.register('cairo', {
             id: 'market_stall',
             name: 'Gewürzstand',
             x: 200, y: 220, w: 150, h: 80,
-            walkX: 275, walkY: 330,
+            walkX: 275, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Farbenfrohe Gewürze: Kurkuma, Saffran, Koriander. Und ein Geruch von... Gefahr?");
@@ -53,7 +53,7 @@ SceneManager.register('cairo', {
             id: 'dates_stall',
             name: 'Datteln-Stand',
             x: 390, y: 230, w: 130, h: 80,
-            walkX: 455, walkY: 330,
+            walkX: 455, walkY: 315,
             verbs: {
                 'look': function() {
                     Dialog.start([
@@ -76,7 +76,7 @@ SceneManager.register('cairo', {
             id: 'spy_monkey',
             name: 'Verdächtiger Affe',
             x: 430, y: 270, w: 50, h: 60,
-            walkX: 455, walkY: 330,
+            walkX: 455, walkY: 315,
             verbs: {
                 'look': function() {
                     Dialog.start([
@@ -96,7 +96,7 @@ SceneManager.register('cairo', {
             id: 'map_room_entrance',
             name: 'Kartenraum-Eingang',
             x: 0, y: 150, w: 60, h: 230,
-            walkX: 70, walkY: 330,
+            walkX: 70, walkY: 315,
             condition: function() { return GameState.flag('cairo_foundSallah') && GameState.hasItem('headpiece_ra'); },
             verbs: {
                 'look': function() {
@@ -111,7 +111,7 @@ SceneManager.register('cairo', {
             id: 'nazi_soldier',
             name: 'Deutscher Soldat',
             x: 680, y: 200, w: 80, h: 180,
-            walkX: 650, walkY: 330,
+            walkX: 650, walkY: 315,
             verbs: {
                 'look': function() {
                     Dialog.start([
@@ -129,7 +129,7 @@ SceneManager.register('cairo', {
     ],
 
     onEnter: function(opts) {
-        Character.place(380, 320, 'right');
+        Character.place(380, 315, 'right');
         GameState.setFlag('cairo_basemarketVisited');
 
         Cutscene.play([
@@ -396,7 +396,7 @@ SceneManager.register('cairo', {
     },
 
     drawSallah: function(ctx, time) {
-        Character.drawNPC(ctx, 595, 330, {
+        Character.drawNPC(ctx, 595, 315, {
             scale: 1.05,
             skin:   '#b87040',
             jacket: '#c8a050',
@@ -409,7 +409,7 @@ SceneManager.register('cairo', {
     },
 
     drawNaziSoldier: function(ctx, time) {
-        Character.drawNPC(ctx, 718, 330, {
+        Character.drawNPC(ctx, 718, 315, {
             scale: 1.0,
             skin:   '#c0b090',
             jacket: '#3a4020',

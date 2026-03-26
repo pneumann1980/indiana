@@ -10,7 +10,7 @@ SceneManager.register('university', {
             id: 'marcus',
             name: 'Marcus Brody',
             x: 560, y: 200, w: 70, h: 150,
-            walkX: 520, walkY: 330,
+            walkX: 520, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Marcus Brody, Indys alter Freund und Mentor. Stets besorgt, stets hilfsbereit.");
@@ -40,7 +40,7 @@ SceneManager.register('university', {
             id: 'chalkboard',
             name: 'Tafel – Karte des Nahen Ostens',
             x: 30, y: 90, w: 200, h: 160,
-            walkX: 130, walkY: 330,
+            walkX: 130, walkY: 315,
             verbs: {
                 'look': function() {
                     Dialog.start([
@@ -54,7 +54,7 @@ SceneManager.register('university', {
             id: 'bookshelf',
             name: 'Bücherregal',
             x: 640, y: 80, w: 150, h: 240,
-            walkX: 680, walkY: 330,
+            walkX: 680, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Tausende Bücher. Archäologie, Geschichte, Mythologie. Ein Forscher-Paradies.");
@@ -73,7 +73,7 @@ SceneManager.register('university', {
             id: 'globus',
             name: 'Globus',
             x: 450, y: 220, w: 70, h: 80,
-            walkX: 450, walkY: 330,
+            walkX: 450, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Ein großer Erdglobus. Mit einer Lupe könnte ich die Wüste von Tanis finden.");
@@ -100,7 +100,7 @@ SceneManager.register('university', {
             id: 'exit',
             name: 'Ausgang',
             x: 0, y: 200, w: 40, h: 180,
-            walkX: 60, walkY: 330,
+            walkX: 60, walkY: 315,
             condition: function() { return GameState.flag('uni_missionAccepted'); },
             verbs: {
                 'look': function() {
@@ -114,7 +114,7 @@ SceneManager.register('university', {
     ],
 
     onEnter: function(opts) {
-        Character.place(350, 320, 'right');
+        Character.place(350, 315, 'right');
 
         if (!GameState.flag('uni_talkedMarcus')) {
             Cutscene.play([
@@ -344,7 +344,7 @@ SceneManager.register('university', {
 
     drawMarcus: function(ctx, time) {
         // Draw Marcus at desk area
-        Character.drawNPC(ctx, 590, 330, {
+        Character.drawNPC(ctx, 590, 315, {
             scale: 1.0,
             skin:   '#c0a080',
             jacket: '#2a2a3a',

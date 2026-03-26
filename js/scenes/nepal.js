@@ -10,7 +10,7 @@ SceneManager.register('nepal', {
             id: 'marion',
             name: 'Marion Ravenwood',
             x: 300, y: 195, w: 70, h: 150,
-            walkX: 280, walkY: 330,
+            walkX: 280, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Marion Ravenwood. Noch genauso schön und gefährlich wie ich sie in Erinnerung habe.");
@@ -79,7 +79,7 @@ SceneManager.register('nepal', {
             id: 'fireplace',
             name: 'Kaminfeuer',
             x: 590, y: 140, w: 120, h: 200,
-            walkX: 630, walkY: 330,
+            walkX: 630, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Ein knisterndes Feuer. In der Kälte des Himalaya überlebensnotwendig.");
@@ -90,7 +90,7 @@ SceneManager.register('nepal', {
             id: 'nepali_patron',
             name: 'Einheimischer Gast',
             x: 470, y: 220, w: 70, h: 130,
-            walkX: 500, walkY: 330,
+            walkX: 500, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Ein einheimischer Stammgast. Er beobachtet alles mit misstrauischen Augen.");
@@ -107,7 +107,7 @@ SceneManager.register('nepal', {
             id: 'exit_out',
             name: 'Ausgang nach Kairo',
             x: 720, y: 200, w: 80, h: 180,
-            walkX: 720, walkY: 330,
+            walkX: 720, walkY: 315,
             condition: function() { return GameState.flag('nepal_medallionGiven'); },
             verbs: {
                 'look': function() {
@@ -121,7 +121,7 @@ SceneManager.register('nepal', {
     ],
 
     onEnter: function(opts) {
-        Character.place(100, 320, 'right');
+        Character.place(100, 315, 'right');
         GameState.setFlag('nepal_barEntered');
 
         if (!GameState.flag('nepal_metMarion')) {
@@ -361,7 +361,7 @@ SceneManager.register('nepal', {
 
     drawMarion: function(ctx, time) {
         // Marion at bar counter
-        Character.drawNPC(ctx, 340, 330, {
+        Character.drawNPC(ctx, 340, 315, {
             scale: 1.0,
             skin:   '#c8a078',
             jacket: '#3a2830',
@@ -392,7 +392,7 @@ SceneManager.register('nepal', {
     },
 
     drawPatron: function(ctx, time) {
-        Character.drawNPC(ctx, 500, 330, {
+        Character.drawNPC(ctx, 500, 315, {
             scale: 0.95,
             skin:   '#b87040',
             jacket: '#4a3020',

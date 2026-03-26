@@ -16,8 +16,8 @@ SceneManager.register('temple', {
         {
             id: 'sandBag',
             name: 'Lederbeutel',
-            x: 55, y: 290, w: 60, h: 40,
-            walkX: 90, walkY: 330,
+            x: 55, y: 270, w: 60, h: 42,
+            walkX: 90, walkY: 315,
             condition: function() { return !GameState.flag('temple_sandBagTaken'); },
             verbs: {
                 'look': function() {
@@ -41,7 +41,7 @@ SceneManager.register('temple', {
             id: 'bones',
             name: 'Menschliche Knochen',
             x: 35, y: 310, w: 60, h: 40,
-            walkX: 90, walkY: 330,
+            walkX: 90, walkY: 315,
             verbs: {
                 'look': function() {
                     Dialog.start([
@@ -54,7 +54,7 @@ SceneManager.register('temple', {
             id: 'goldIdol',
             name: 'Goldenes Idol',
             x: 358, y: 188, w: 84, h: 70,
-            walkX: 400, walkY: 330,
+            walkX: 400, walkY: 315,
             verbs: {
                 'look': function() {
                     Dialog.start([
@@ -84,7 +84,7 @@ SceneManager.register('temple', {
             id: 'pressurePlate',
             name: 'Druckplatte',
             x: 350, y: 280, w: 100, h: 30,
-            walkX: 400, walkY: 330,
+            walkX: 400, walkY: 315,
             verbs: {
                 'look': function() {
                     Dialog.start([
@@ -108,7 +108,7 @@ SceneManager.register('temple', {
             id: 'pedestal',
             name: 'Steinsockel',
             x: 330, y: 250, w: 140, h: 80,
-            walkX: 400, walkY: 330,
+            walkX: 400, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Ein alter Opfersockel. Das Idol sitzt auf einer versteckten Waage.");
@@ -119,7 +119,7 @@ SceneManager.register('temple', {
             id: 'wallCarvings',
             name: 'Wandschnitzereien',
             x: 190, y: 100, w: 140, h: 160,
-            walkX: 260, walkY: 310,
+            walkX: 260, walkY: 315,
             verbs: {
                 'look': function() {
                     Dialog.start([
@@ -134,7 +134,7 @@ SceneManager.register('temple', {
             id: 'rightCarvings',
             name: 'Wandschnitzereien',
             x: 480, y: 100, w: 130, h: 160,
-            walkX: 540, walkY: 310,
+            walkX: 540, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Weitere Schnitzereien zeigen die Strafe für Grabräuber. Sehr eindrücklich.");
@@ -145,7 +145,7 @@ SceneManager.register('temple', {
             id: 'torchLeft',
             name: 'Wandfackel',
             x: 60, y: 150, w: 30, h: 80,
-            walkX: 100, walkY: 310,
+            walkX: 100, walkY: 315,
             verbs: {
                 'look': function() {
                     GameState.showMessage("Eine noch brennende Fackel. Die Luft hier muss frischer sein als erwartet.");
@@ -175,7 +175,7 @@ SceneManager.register('temple', {
             id: 'spikePit',
             name: 'Stachel-Grube',
             x: 0, y: 260, w: 35, h: 60,
-            walkX: 50, walkY: 330,
+            walkX: 50, walkY: 315,
             verbs: {
                 'look': function() {
                     Dialog.start([
@@ -189,7 +189,7 @@ SceneManager.register('temple', {
             id: 'exitDoor',
             name: 'Steintor',
             x: 690, y: 200, w: 110, h: 160,
-            walkX: 700, walkY: 330,
+            walkX: 700, walkY: 315,
             condition: function() { return GameState.flag('temple_idolTaken'); },
             verbs: {
                 'look': function() {
@@ -207,7 +207,7 @@ SceneManager.register('temple', {
             id: 'entrance',
             name: 'Tempeleingang',
             x: 690, y: 200, w: 110, h: 160,
-            walkX: 700, walkY: 330,
+            walkX: 700, walkY: 315,
             condition: function() { return !GameState.flag('temple_idolTaken'); },
             verbs: {
                 'look': function() {
@@ -224,7 +224,7 @@ SceneManager.register('temple', {
             id: 'satipo',
             name: 'Sapito',
             x: 660, y: 240, w: 60, h: 110,
-            walkX: 640, walkY: 330,
+            walkX: 640, walkY: 315,
             condition: function() { return !GameState.flag('temple_idolTaken'); },
             verbs: {
                 'look': function() {
@@ -247,21 +247,16 @@ SceneManager.register('temple', {
         this.boulderX = -100;
         this.boulderRolling = false;
 
-        Character.place(200, 320, 'right');
+        Character.place(200, 315, 'right');
 
         if (!GameState.flag('temple_sapitoMet')) {
             GameState.setFlag('temple_sapitoMet');
-            // Opening cutscene
-            Cutscene.play([
-                { type: 'caption', text: 'Südamerika – 1936', duration: 3.0 },
-                { type: 'caption', text: 'Irgendwo im Dschungel Perus...', duration: 2.5 },
-                { type: 'dialog', lines: [
-                    { speaker: 'Indiana', text: 'Geschafft. Der Tempel des Chachapoyan-Kriegers. Ich hab zwanzig Jahre darauf gewartet.' },
-                    { speaker: 'Sapito', text: 'Señor Jones! Das Idol - es ist wirklich da!' },
-                    { speaker: 'Indiana', text: 'Natürlich ist es da. Ich war mir immer sicher. Fast immer.' },
-                    { speaker: 'Sapito', text: 'Aber die Fallen... die Schnitzereien warnen-' },
-                    { speaker: 'Indiana', text: 'Ich weiß, ich weiß. Bleib am Eingang. Ich hol das Ding.' }
-                ]},
+            // Kurzes Opening – sofort klickbar
+            Dialog.start([
+                { speaker: 'Indiana', text: 'Südamerika, 1936. Der Tempel des Chachapoyan-Kriegers. Ich hab zwanzig Jahre darauf gewartet.' },
+                { speaker: 'Sapito',  text: 'Señor Jones! Das Idol – es ist wirklich da! Aber Vorsicht – die Fallen!' },
+                { speaker: 'Indiana', text: 'Ich weiß. Bleib am Eingang, Sapito. Ich hol das Ding.' },
+                { speaker: 'Indiana', text: '[Tipp: Klicke auf Objekte um sie zu untersuchen. Nimm erst den SANDSACK links!]' },
             ]);
         }
     },
@@ -414,20 +409,20 @@ SceneManager.register('temple', {
         }
 
         // === Stone Floor ===
-        Utils.stoneFloor(ctx, 0, 290, W, H - 290, '#1c1610', '#18120c');
+        Utils.stoneFloor(ctx, 0, 268, W, H - 268, '#1c1610', '#18120c');
 
         // Spike pit (left side, near edge)
-        this.drawSpikePit(ctx, 0, 260, 35);
+        this.drawSpikePit(ctx, 0, 240, 35);
 
         // Floor dirt / dust
         ctx.fillStyle = 'rgba(80,60,20,0.15)';
         ctx.fillRect(0, 320, W, 20);
 
         // === Pedestal & Idol ===
-        this.drawPedestal(ctx, 350, 260, time);
+        this.drawPedestal(ctx, 350, 240, time);
 
         // === Exit doorway ===
-        this.drawExitDoor(ctx, 695, 200, time);
+        this.drawExitDoor(ctx, 695, 185, time);
     },
 
     drawColumn: function(ctx, x, y, w, h, time) {
@@ -655,7 +650,7 @@ SceneManager.register('temple', {
 
     drawSatipo: function(ctx, time) {
         // Sapito at the doorway
-        Character.drawNPC(ctx, 700, 330, {
+        Character.drawNPC(ctx, 700, 315, {
             scale: 0.9,
             skin:   '#b87048',
             jacket: '#3a5a3a',
@@ -669,7 +664,7 @@ SceneManager.register('temple', {
 
     drawBoulder: function(ctx) {
         var bx = this.boulderX;
-        var by = 280;
+        var by = 255;
         var br = 55;
 
         // Rolling animation

@@ -170,12 +170,20 @@ var Cutscene = {
 
         // Caption text (title-card style)
         if (cs.caption) {
-            ctx.fillStyle = 'rgba(0,0,0,0.6)';
-            ctx.fillRect(0, CONFIG.SCENE_H / 2 - 30, CONFIG.CANVAS_W, 60);
+            ctx.fillStyle = 'rgba(0,0,0,0.72)';
+            ctx.fillRect(0, CONFIG.SCENE_H / 2 - 32, CONFIG.CANVAS_W, 64);
+            ctx.fillStyle = 'rgba(180,140,30,0.5)';
+            ctx.fillRect(40, CONFIG.SCENE_H / 2 - 32, CONFIG.CANVAS_W - 80, 1);
+            ctx.fillRect(40, CONFIG.SCENE_H / 2 + 30, CONFIG.CANVAS_W - 80, 1);
 
             Utils.text(ctx, cs.caption,
-                CONFIG.CANVAS_W / 2, CONFIG.SCENE_H / 2 - 18,
-                { size: 22, color: '#ffd700', align: 'center', stroke: '#0a0600', shadow: true });
+                CONFIG.CANVAS_W / 2, CONFIG.SCENE_H / 2 - 16,
+                { size: 22, color: '#ffe060', align: 'center', stroke: '#0a0600', shadow: true });
+
+            // Click to skip hint
+            Utils.text(ctx, '[ Klicken zum Weiter ]',
+                CONFIG.CANVAS_W / 2, CONFIG.SCENE_H / 2 + 14,
+                { size: 10, color: 'rgba(180,140,60,0.7)', align: 'center' });
         }
     },
 
