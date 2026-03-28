@@ -37,8 +37,22 @@ var Game = {
         this.lastTime = timestamp;
         this.time    += dt;
 
-        this.update(dt);
-        this.render();
+        try {
+            this.update(dt);
+            this.render();
+        } catch(e) {
+            // Log error but keep loop alive
+            console.error('Game error:', e);
+            // Draw error message on canvas so it's visible
+            var ctx = this.ctx;
+            ctx.fillStyle = 'rgba(0,0,0,0.85)';
+            ctx.fillRect(0, 0, CONFIG.CANVAS_W, 60);
+            ctx.fillStyle = '#ff4444';
+            ctx.font = 'bold 12px monospace';
+            ctx.textAlign = 'left';
+            ctx.fillText('JS Error: ' + e.message, 10, 20);
+            ctx.fillText(e.stack ? e.stack.split('\n')[1] : '', 10, 40);
+        }
 
         var self = this;
         requestAnimationFrame(function(ts) { self.loop(ts); });

@@ -297,7 +297,7 @@ SceneManager.register('temple', {
             { type: 'dialog', lines: [
                 { speaker: 'Indiana', text: 'LAUFEN!' }
             ]},
-            { type: 'walk', x: 750, y: 320 },
+            { type: 'walk', x: 750, y: 315 },
             { type: 'wait', duration: 0.5 },
             { type: 'fade_out', duration: 0.6 },
             { type: 'wait', duration: 0.3 },
@@ -344,7 +344,6 @@ SceneManager.register('temple', {
     // ── Draw Scene ───────────────────────────
     draw: function(ctx, time) {
         this.drawBackground(ctx, time);
-        this.drawObjects(ctx, time);
         if (this.boulderRolling) {
             this.drawBoulder(ctx);
         }
